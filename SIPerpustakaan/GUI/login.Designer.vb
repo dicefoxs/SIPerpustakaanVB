@@ -24,17 +24,21 @@ Partial Class login
     Private Sub InitializeComponent()
         Me.Panel1 = New ns1.SiticonePanel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.SiticonePictureBox1 = New ns1.SiticonePictureBox()
         Me.Panel2 = New ns1.SiticonePanel()
         Me.SubPanel1 = New ns1.SiticonePanel()
         Me.SiticoneCustomGradientPanel1 = New ns1.SiticoneCustomGradientPanel()
-        Me.SiticoneButton1 = New ns1.SiticoneButton()
-        Me.SiticoneTextBox1 = New ns1.SiticoneTextBox()
+        Me.SiticoneLabel2 = New ns1.SiticoneLabel()
+        Me.SiticoneLabel1 = New ns1.SiticoneLabel()
         Me.Password = New ns1.SiticoneTextBox()
+        Me.Username = New ns1.SiticoneTextBox()
+        Me.LoginButton = New ns1.SiticoneButton()
+        Me.SiticoneCirclePictureBox1 = New ns1.SiticoneCirclePictureBox()
+        Me.SiticonePictureBox1 = New ns1.SiticonePictureBox()
         Me.Panel1.SuspendLayout()
-        CType(Me.SiticonePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.SiticoneCustomGradientPanel1.SuspendLayout()
+        CType(Me.SiticoneCirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SiticonePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -61,17 +65,6 @@ Partial Class login
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Login Admin"
         '
-        'SiticonePictureBox1
-        '
-        Me.SiticonePictureBox1.Image = Global.SIPerpustakaan.My.Resources.Resources.icons8_close_window_48
-        Me.SiticonePictureBox1.Location = New System.Drawing.Point(442, 3)
-        Me.SiticonePictureBox1.Name = "SiticonePictureBox1"
-        Me.SiticonePictureBox1.ShadowDecoration.Parent = Me.SiticonePictureBox1
-        Me.SiticonePictureBox1.Size = New System.Drawing.Size(25, 25)
-        Me.SiticonePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.SiticonePictureBox1.TabIndex = 0
-        Me.SiticonePictureBox1.TabStop = False
-        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(179, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(252, Byte), Integer))
@@ -95,58 +88,44 @@ Partial Class login
         '
         'SiticoneCustomGradientPanel1
         '
+        Me.SiticoneCustomGradientPanel1.Controls.Add(Me.SiticoneCirclePictureBox1)
+        Me.SiticoneCustomGradientPanel1.Controls.Add(Me.SiticoneLabel2)
+        Me.SiticoneCustomGradientPanel1.Controls.Add(Me.SiticoneLabel1)
         Me.SiticoneCustomGradientPanel1.Controls.Add(Me.Password)
-        Me.SiticoneCustomGradientPanel1.Controls.Add(Me.SiticoneTextBox1)
-        Me.SiticoneCustomGradientPanel1.Controls.Add(Me.SiticoneButton1)
+        Me.SiticoneCustomGradientPanel1.Controls.Add(Me.Username)
+        Me.SiticoneCustomGradientPanel1.Controls.Add(Me.LoginButton)
         Me.SiticoneCustomGradientPanel1.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(165, Byte), Integer))
         Me.SiticoneCustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(244, Byte), Integer))
         Me.SiticoneCustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(209, Byte), Integer))
         Me.SiticoneCustomGradientPanel1.Location = New System.Drawing.Point(68, 61)
-        Me.SiticoneCustomGradientPanel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.SiticoneCustomGradientPanel1.Margin = New System.Windows.Forms.Padding(2)
         Me.SiticoneCustomGradientPanel1.Name = "SiticoneCustomGradientPanel1"
         Me.SiticoneCustomGradientPanel1.Quality = 7
         Me.SiticoneCustomGradientPanel1.ShadowDecoration.Parent = Me.SiticoneCustomGradientPanel1
         Me.SiticoneCustomGradientPanel1.Size = New System.Drawing.Size(338, 451)
         Me.SiticoneCustomGradientPanel1.TabIndex = 0
         '
-        'SiticoneButton1
+        'SiticoneLabel2
         '
-        Me.SiticoneButton1.BackColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.SiticoneButton1.CheckedState.Parent = Me.SiticoneButton1
-        Me.SiticoneButton1.CustomImages.Parent = Me.SiticoneButton1
-        Me.SiticoneButton1.FillColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.SiticoneButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.SiticoneButton1.ForeColor = System.Drawing.Color.White
-        Me.SiticoneButton1.HoveredState.Parent = Me.SiticoneButton1
-        Me.SiticoneButton1.Location = New System.Drawing.Point(114, 347)
-        Me.SiticoneButton1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.SiticoneButton1.Name = "SiticoneButton1"
-        Me.SiticoneButton1.ShadowDecoration.Parent = Me.SiticoneButton1
-        Me.SiticoneButton1.Size = New System.Drawing.Size(104, 37)
-        Me.SiticoneButton1.TabIndex = 0
-        Me.SiticoneButton1.Text = "LOGIN"
+        Me.SiticoneLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.SiticoneLabel2.Font = New System.Drawing.Font("Century Gothic", 16.0!)
+        Me.SiticoneLabel2.ForeColor = System.Drawing.Color.White
+        Me.SiticoneLabel2.Location = New System.Drawing.Point(120, 236)
+        Me.SiticoneLabel2.Name = "SiticoneLabel2"
+        Me.SiticoneLabel2.Size = New System.Drawing.Size(97, 26)
+        Me.SiticoneLabel2.TabIndex = 4
+        Me.SiticoneLabel2.Text = "Password"
         '
-        'SiticoneTextBox1
+        'SiticoneLabel1
         '
-        Me.SiticoneTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.SiticoneTextBox1.DefaultText = ""
-        Me.SiticoneTextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.SiticoneTextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.SiticoneTextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.SiticoneTextBox1.DisabledState.Parent = Me.SiticoneTextBox1
-        Me.SiticoneTextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.SiticoneTextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.SiticoneTextBox1.FocusedState.Parent = Me.SiticoneTextBox1
-        Me.SiticoneTextBox1.HoveredState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.SiticoneTextBox1.HoveredState.Parent = Me.SiticoneTextBox1
-        Me.SiticoneTextBox1.Location = New System.Drawing.Point(69, 193)
-        Me.SiticoneTextBox1.Name = "SiticoneTextBox1"
-        Me.SiticoneTextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.SiticoneTextBox1.PlaceholderText = ""
-        Me.SiticoneTextBox1.SelectedText = ""
-        Me.SiticoneTextBox1.ShadowDecoration.Parent = Me.SiticoneTextBox1
-        Me.SiticoneTextBox1.Size = New System.Drawing.Size(200, 21)
-        Me.SiticoneTextBox1.TabIndex = 1
+        Me.SiticoneLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.SiticoneLabel1.Font = New System.Drawing.Font("Century Gothic", 16.0!)
+        Me.SiticoneLabel1.ForeColor = System.Drawing.Color.White
+        Me.SiticoneLabel1.Location = New System.Drawing.Point(116, 161)
+        Me.SiticoneLabel1.Name = "SiticoneLabel1"
+        Me.SiticoneLabel1.Size = New System.Drawing.Size(106, 26)
+        Me.SiticoneLabel1.TabIndex = 3
+        Me.SiticoneLabel1.Text = "Username"
         '
         'Password
         '
@@ -159,6 +138,7 @@ Partial Class login
         Me.Password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.Password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Password.FocusedState.Parent = Me.Password
+        Me.Password.ForeColor = System.Drawing.Color.Black
         Me.Password.HoveredState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Password.HoveredState.Parent = Me.Password
         Me.Password.Location = New System.Drawing.Point(69, 264)
@@ -169,6 +149,73 @@ Partial Class login
         Me.Password.ShadowDecoration.Parent = Me.Password
         Me.Password.Size = New System.Drawing.Size(200, 21)
         Me.Password.TabIndex = 2
+        Me.Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Username
+        '
+        Me.Username.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Username.DefaultText = ""
+        Me.Username.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.Username.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.Username.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Username.DisabledState.Parent = Me.Username
+        Me.Username.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Username.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Username.FocusedState.Parent = Me.Username
+        Me.Username.ForeColor = System.Drawing.Color.Black
+        Me.Username.HoveredState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Username.HoveredState.Parent = Me.Username
+        Me.Username.Location = New System.Drawing.Point(69, 193)
+        Me.Username.Name = "Username"
+        Me.Username.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.Username.PlaceholderText = ""
+        Me.Username.SelectedText = ""
+        Me.Username.ShadowDecoration.Parent = Me.Username
+        Me.Username.Size = New System.Drawing.Size(200, 21)
+        Me.Username.TabIndex = 1
+        Me.Username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'LoginButton
+        '
+        Me.LoginButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(244, Byte), Integer))
+        Me.LoginButton.CheckedState.Parent = Me.LoginButton
+        Me.LoginButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LoginButton.CustomImages.Parent = Me.LoginButton
+        Me.LoginButton.FillColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(244, Byte), Integer))
+        Me.LoginButton.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.LoginButton.ForeColor = System.Drawing.Color.White
+        Me.LoginButton.HoveredState.Parent = Me.LoginButton
+        Me.LoginButton.Location = New System.Drawing.Point(114, 347)
+        Me.LoginButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.LoginButton.Name = "LoginButton"
+        Me.LoginButton.ShadowDecoration.Parent = Me.LoginButton
+        Me.LoginButton.Size = New System.Drawing.Size(104, 37)
+        Me.LoginButton.TabIndex = 0
+        Me.LoginButton.Text = "LOGIN"
+        '
+        'SiticoneCirclePictureBox1
+        '
+        Me.SiticoneCirclePictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.SiticoneCirclePictureBox1.Image = Global.SIPerpustakaan.My.Resources.Resources.user_6_White
+        Me.SiticoneCirclePictureBox1.Location = New System.Drawing.Point(109, 15)
+        Me.SiticoneCirclePictureBox1.Name = "SiticoneCirclePictureBox1"
+        Me.SiticoneCirclePictureBox1.ShadowDecoration.Mode = ns5.ShadowMode.Circle
+        Me.SiticoneCirclePictureBox1.ShadowDecoration.Parent = Me.SiticoneCirclePictureBox1
+        Me.SiticoneCirclePictureBox1.Size = New System.Drawing.Size(120, 120)
+        Me.SiticoneCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.SiticoneCirclePictureBox1.TabIndex = 5
+        Me.SiticoneCirclePictureBox1.TabStop = False
+        '
+        'SiticonePictureBox1
+        '
+        Me.SiticonePictureBox1.Image = Global.SIPerpustakaan.My.Resources.Resources.icons8_close_window_48
+        Me.SiticonePictureBox1.Location = New System.Drawing.Point(442, 3)
+        Me.SiticonePictureBox1.Name = "SiticonePictureBox1"
+        Me.SiticonePictureBox1.ShadowDecoration.Parent = Me.SiticonePictureBox1
+        Me.SiticonePictureBox1.Size = New System.Drawing.Size(25, 25)
+        Me.SiticonePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.SiticonePictureBox1.TabIndex = 0
+        Me.SiticonePictureBox1.TabStop = False
         '
         'login
         '
@@ -185,9 +232,11 @@ Partial Class login
         Me.Text = "login"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.SiticonePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.SiticoneCustomGradientPanel1.ResumeLayout(False)
+        Me.SiticoneCustomGradientPanel1.PerformLayout()
+        CType(Me.SiticoneCirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SiticonePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -198,7 +247,10 @@ Partial Class login
     Friend WithEvents SubPanel1 As ns1.SiticonePanel
     Friend WithEvents SiticoneCustomGradientPanel1 As ns1.SiticoneCustomGradientPanel
     Friend WithEvents Label1 As Label
-    Friend WithEvents SiticoneButton1 As ns1.SiticoneButton
+    Friend WithEvents LoginButton As ns1.SiticoneButton
     Friend WithEvents Password As ns1.SiticoneTextBox
-    Friend WithEvents SiticoneTextBox1 As ns1.SiticoneTextBox
+    Friend WithEvents Username As ns1.SiticoneTextBox
+    Friend WithEvents SiticoneLabel1 As ns1.SiticoneLabel
+    Friend WithEvents SiticoneLabel2 As ns1.SiticoneLabel
+    Friend WithEvents SiticoneCirclePictureBox1 As ns1.SiticoneCirclePictureBox
 End Class

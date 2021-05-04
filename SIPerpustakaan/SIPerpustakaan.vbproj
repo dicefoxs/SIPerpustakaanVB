@@ -87,6 +87,12 @@
     <Compile Include="CLASS\Buku.vb" />
     <Compile Include="CLASS\Human.vb" />
     <Compile Include="Controller\BukuController.vb" />
+    <Compile Include="GUI\Admin_Panel.Designer.vb">
+      <DependentUpon>Admin_Panel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin_Panel.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUI\login.Designer.vb">
       <DependentUpon>login.vb</DependentUpon>
     </Compile>
@@ -141,12 +147,14 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\c54323942a5b08df8411e33e25680ab3-pile-of-books-vector-by-vexels.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-close-window-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-6-White.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
