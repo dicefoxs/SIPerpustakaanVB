@@ -24,21 +24,21 @@ Partial Class login
     Private Sub InitializeComponent()
         Me.Panel1 = New ns1.SiticonePanel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.SiticonePictureBox1 = New ns1.SiticonePictureBox()
         Me.Panel2 = New ns1.SiticonePanel()
         Me.SubPanel1 = New ns1.SiticonePanel()
         Me.SiticoneCustomGradientPanel1 = New ns1.SiticoneCustomGradientPanel()
+        Me.SiticoneCirclePictureBox1 = New ns1.SiticoneCirclePictureBox()
         Me.SiticoneLabel2 = New ns1.SiticoneLabel()
         Me.SiticoneLabel1 = New ns1.SiticoneLabel()
         Me.Password = New ns1.SiticoneTextBox()
         Me.Username = New ns1.SiticoneTextBox()
         Me.LoginButton = New ns1.SiticoneButton()
-        Me.SiticoneCirclePictureBox1 = New ns1.SiticoneCirclePictureBox()
-        Me.SiticonePictureBox1 = New ns1.SiticonePictureBox()
         Me.Panel1.SuspendLayout()
+        CType(Me.SiticonePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.SiticoneCustomGradientPanel1.SuspendLayout()
         CType(Me.SiticoneCirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SiticonePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -64,6 +64,18 @@ Partial Class login
         Me.Label1.Size = New System.Drawing.Size(107, 21)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Login Admin"
+        '
+        'SiticonePictureBox1
+        '
+        Me.SiticonePictureBox1.BackColor = System.Drawing.Color.White
+        Me.SiticonePictureBox1.Image = Global.SIPerpustakaan.My.Resources.Resources.icons8_close_window_48
+        Me.SiticonePictureBox1.Location = New System.Drawing.Point(442, 3)
+        Me.SiticonePictureBox1.Name = "SiticonePictureBox1"
+        Me.SiticonePictureBox1.ShadowDecoration.Parent = Me.SiticonePictureBox1
+        Me.SiticonePictureBox1.Size = New System.Drawing.Size(25, 25)
+        Me.SiticonePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.SiticonePictureBox1.TabIndex = 0
+        Me.SiticonePictureBox1.TabStop = False
         '
         'Panel2
         '
@@ -104,6 +116,19 @@ Partial Class login
         Me.SiticoneCustomGradientPanel1.ShadowDecoration.Parent = Me.SiticoneCustomGradientPanel1
         Me.SiticoneCustomGradientPanel1.Size = New System.Drawing.Size(338, 451)
         Me.SiticoneCustomGradientPanel1.TabIndex = 0
+        '
+        'SiticoneCirclePictureBox1
+        '
+        Me.SiticoneCirclePictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.SiticoneCirclePictureBox1.Image = Global.SIPerpustakaan.My.Resources.Resources.user_6_White
+        Me.SiticoneCirclePictureBox1.Location = New System.Drawing.Point(109, 15)
+        Me.SiticoneCirclePictureBox1.Name = "SiticoneCirclePictureBox1"
+        Me.SiticoneCirclePictureBox1.ShadowDecoration.Mode = ns5.ShadowMode.Circle
+        Me.SiticoneCirclePictureBox1.ShadowDecoration.Parent = Me.SiticoneCirclePictureBox1
+        Me.SiticoneCirclePictureBox1.Size = New System.Drawing.Size(120, 120)
+        Me.SiticoneCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.SiticoneCirclePictureBox1.TabIndex = 5
+        Me.SiticoneCirclePictureBox1.TabStop = False
         '
         'SiticoneLabel2
         '
@@ -193,30 +218,6 @@ Partial Class login
         Me.LoginButton.TabIndex = 0
         Me.LoginButton.Text = "LOGIN"
         '
-        'SiticoneCirclePictureBox1
-        '
-        Me.SiticoneCirclePictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.SiticoneCirclePictureBox1.Image = Global.SIPerpustakaan.My.Resources.Resources.user_6_White
-        Me.SiticoneCirclePictureBox1.Location = New System.Drawing.Point(109, 15)
-        Me.SiticoneCirclePictureBox1.Name = "SiticoneCirclePictureBox1"
-        Me.SiticoneCirclePictureBox1.ShadowDecoration.Mode = ns5.ShadowMode.Circle
-        Me.SiticoneCirclePictureBox1.ShadowDecoration.Parent = Me.SiticoneCirclePictureBox1
-        Me.SiticoneCirclePictureBox1.Size = New System.Drawing.Size(120, 120)
-        Me.SiticoneCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.SiticoneCirclePictureBox1.TabIndex = 5
-        Me.SiticoneCirclePictureBox1.TabStop = False
-        '
-        'SiticonePictureBox1
-        '
-        Me.SiticonePictureBox1.Image = Global.SIPerpustakaan.My.Resources.Resources.icons8_close_window_48
-        Me.SiticonePictureBox1.Location = New System.Drawing.Point(442, 3)
-        Me.SiticonePictureBox1.Name = "SiticonePictureBox1"
-        Me.SiticonePictureBox1.ShadowDecoration.Parent = Me.SiticonePictureBox1
-        Me.SiticonePictureBox1.Size = New System.Drawing.Size(25, 25)
-        Me.SiticonePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.SiticonePictureBox1.TabIndex = 0
-        Me.SiticonePictureBox1.TabStop = False
-        '
         'login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -232,11 +233,11 @@ Partial Class login
         Me.Text = "login"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.SiticonePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.SiticoneCustomGradientPanel1.ResumeLayout(False)
         Me.SiticoneCustomGradientPanel1.PerformLayout()
         CType(Me.SiticoneCirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SiticonePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

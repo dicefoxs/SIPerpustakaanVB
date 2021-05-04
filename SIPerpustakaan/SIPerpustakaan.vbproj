@@ -47,6 +47,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Guna.UI">
       <HintPath>C:\Users\aardi\Documents\Guna UI Framework Ultimate 2.0.0.1\Guna UI Framework Ultimate v2.0.0.1 Lib-Master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
@@ -93,6 +96,12 @@
     <Compile Include="GUI\Admin_Panel.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GUI\BookManagement.Designer.vb">
+      <DependentUpon>BookManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\BookManagement.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUI\login.Designer.vb">
       <DependentUpon>login.vb</DependentUpon>
     </Compile>
@@ -122,6 +131,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\Admin_Panel.resx">
+      <DependentUpon>Admin_Panel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\BookManagement.resx">
+      <DependentUpon>BookManagement.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\login.resx">
       <DependentUpon>login.vb</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +151,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -155,6 +171,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user-6-White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\154-folders-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\058-student-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\118-open-book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\035-timetable.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

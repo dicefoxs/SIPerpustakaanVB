@@ -22,7 +22,7 @@
                 Username.Focus()
             End If
         ElseIf Username.Text = "admin" And Password.Text = "admin" Then
-                Me.Hide()
+            Me.Hide()
             Admin_Panel.Show()
         End If
     End Sub
