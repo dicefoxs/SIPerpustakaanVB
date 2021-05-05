@@ -1,9 +1,19 @@
-﻿Public Class Pinjam
+﻿Public Class Kembali
+
+    Private Property _idKembali As Integer
     Private Property _idPinjam As Integer
+    Private Property _Denda As Integer
     Private Property _idAnggota As Integer
-    Private Property _idBuku As Integer
-    Private Property _tglPinjam As Date
     Private Property _tglKembali As Date
+
+    Public Property idKembali As Integer
+        Set(value As Integer)
+            _idKembali = value
+        End Set
+        Get
+            Return _idKembali
+        End Get
+    End Property
 
     Public Property idPinjam As Integer
         Set(value As Integer)
@@ -14,12 +24,12 @@
         End Get
     End Property
 
-    Public Property idBuku As Integer
+    Public Property Denda As Integer
         Set(value As Integer)
-            _idBuku = value
+            _Denda = Denda
         End Set
         Get
-            Return _idBuku
+            Return _Denda
         End Get
     End Property
 
@@ -29,15 +39,6 @@
         End Set
         Get
             Return _tglKembali
-        End Get
-    End Property
-
-    Public Property tglPinjam As Date
-        Set(value As Date)
-            _tglPinjam = value
-        End Set
-        Get
-            Return _tglPinjam
         End Get
     End Property
 End Class

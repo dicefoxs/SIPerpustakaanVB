@@ -1,10 +1,9 @@
 ﻿Public Class Buku
     Private Property _namaBuku As String
     Private Property _idBuku As Integer
-    Private Property _idJenis As Integer
+    Private Property _idKategori As Integer
     Private Property _jumlahBuku As Integer
-    Private Property _namaPenerbit As String
-    Private Property _thnTerbit As Date
+    Private Property _idPenerbit As Integer
 
     Public Property idBuku As Integer
         Set(value As Integer)
@@ -23,36 +22,31 @@
             Return _namaBuku
         End Get
     End Property
-    Public Property idJenis As Integer
+
+    Public Property idKategori As Integer
         Set(value As Integer)
-            _idBuku = value
+            _idKategori = value
         End Set
         Get
-            Return _idBuku
+            Return _idKategori
         End Get
     End Property
-    Public Property namaPenerbit As Integer
+
+    Public Property idPenerbit As Integer
         Set(value As Integer)
-            _namaPenerbit = value
+            _idPenerbit = value
         End Set
         Get
-            Return _namaPenerbit
+            Return _idPenerbit
         End Get
     End Property
+
     Public Property jumlahBuku As Integer
         Set(value As Integer)
             _jumlahBuku = value
         End Set
         Get
             Return _jumlahBuku
-        End Get
-    End Property
-    Public Property thnTerbit As Date
-        Set(value As Date)
-            _thnTerbit = value
-        End Set
-        Get
-            Return _thnTerbit
         End Get
     End Property
 End Class

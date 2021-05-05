@@ -22,16 +22,18 @@ Partial Class Admin_Panel
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.SiticoneGradientPanel1 = New ns1.SiticoneGradientPanel()
-        Me.SiticoneLabel2 = New ns1.SiticoneLabel()
-        Me.SiticoneLabel1 = New ns1.SiticoneLabel()
+        Me.SiticoneLabel4 = New ns1.SiticoneLabel()
+        Me.SiticoneLabel3 = New ns1.SiticoneLabel()
         Me.SiticonePictureBox5 = New ns1.SiticonePictureBox()
         Me.SiticonePictureBox4 = New ns1.SiticonePictureBox()
+        Me.SiticoneLabel2 = New ns1.SiticoneLabel()
+        Me.SiticoneLabel1 = New ns1.SiticoneLabel()
         Me.SiticonePictureBox3 = New ns1.SiticonePictureBox()
         Me.SiticonePictureBox2 = New ns1.SiticonePictureBox()
         Me.SiticonePictureBox1 = New ns1.SiticonePictureBox()
-        Me.SiticoneLabel3 = New ns1.SiticoneLabel()
-        Me.SiticoneLabel4 = New ns1.SiticoneLabel()
+        Me.SiticoneDragControl1 = New ns1.SiticoneDragControl(Me.components)
         Me.SiticoneGradientPanel1.SuspendLayout()
         CType(Me.SiticonePictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SiticonePictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,25 +60,25 @@ Partial Class Admin_Panel
         Me.SiticoneGradientPanel1.Size = New System.Drawing.Size(800, 264)
         Me.SiticoneGradientPanel1.TabIndex = 1
         '
-        'SiticoneLabel2
+        'SiticoneLabel4
         '
-        Me.SiticoneLabel2.BackColor = System.Drawing.Color.Transparent
-        Me.SiticoneLabel2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SiticoneLabel2.Location = New System.Drawing.Point(189, 186)
-        Me.SiticoneLabel2.Name = "SiticoneLabel2"
-        Me.SiticoneLabel2.Size = New System.Drawing.Size(178, 23)
-        Me.SiticoneLabel2.TabIndex = 5
-        Me.SiticoneLabel2.Text = "Pengelolaan Anggota"
+        Me.SiticoneLabel4.BackColor = System.Drawing.Color.Transparent
+        Me.SiticoneLabel4.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SiticoneLabel4.Location = New System.Drawing.Point(597, 186)
+        Me.SiticoneLabel4.Name = "SiticoneLabel4"
+        Me.SiticoneLabel4.Size = New System.Drawing.Size(158, 23)
+        Me.SiticoneLabel4.TabIndex = 9
+        Me.SiticoneLabel4.Text = "Pengembalian Buku"
         '
-        'SiticoneLabel1
+        'SiticoneLabel3
         '
-        Me.SiticoneLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.SiticoneLabel1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SiticoneLabel1.Location = New System.Drawing.Point(15, 186)
-        Me.SiticoneLabel1.Name = "SiticoneLabel1"
-        Me.SiticoneLabel1.Size = New System.Drawing.Size(142, 23)
-        Me.SiticoneLabel1.TabIndex = 4
-        Me.SiticoneLabel1.Text = "Pengelolaan Buku"
+        Me.SiticoneLabel3.BackColor = System.Drawing.Color.Transparent
+        Me.SiticoneLabel3.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SiticoneLabel3.Location = New System.Drawing.Point(406, 186)
+        Me.SiticoneLabel3.Name = "SiticoneLabel3"
+        Me.SiticoneLabel3.Size = New System.Drawing.Size(141, 23)
+        Me.SiticoneLabel3.TabIndex = 8
+        Me.SiticoneLabel3.Text = "Peminjaman Buku"
         '
         'SiticonePictureBox5
         '
@@ -99,6 +101,26 @@ Partial Class Admin_Panel
         Me.SiticonePictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.SiticonePictureBox4.TabIndex = 6
         Me.SiticonePictureBox4.TabStop = False
+        '
+        'SiticoneLabel2
+        '
+        Me.SiticoneLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.SiticoneLabel2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SiticoneLabel2.Location = New System.Drawing.Point(189, 186)
+        Me.SiticoneLabel2.Name = "SiticoneLabel2"
+        Me.SiticoneLabel2.Size = New System.Drawing.Size(178, 23)
+        Me.SiticoneLabel2.TabIndex = 5
+        Me.SiticoneLabel2.Text = "Pengelolaan Anggota"
+        '
+        'SiticoneLabel1
+        '
+        Me.SiticoneLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.SiticoneLabel1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SiticoneLabel1.Location = New System.Drawing.Point(15, 186)
+        Me.SiticoneLabel1.Name = "SiticoneLabel1"
+        Me.SiticoneLabel1.Size = New System.Drawing.Size(142, 23)
+        Me.SiticoneLabel1.TabIndex = 4
+        Me.SiticoneLabel1.Text = "Pengelolaan Buku"
         '
         'SiticonePictureBox3
         '
@@ -133,25 +155,9 @@ Partial Class Admin_Panel
         Me.SiticonePictureBox1.TabIndex = 1
         Me.SiticonePictureBox1.TabStop = False
         '
-        'SiticoneLabel3
+        'SiticoneDragControl1
         '
-        Me.SiticoneLabel3.BackColor = System.Drawing.Color.Transparent
-        Me.SiticoneLabel3.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SiticoneLabel3.Location = New System.Drawing.Point(406, 186)
-        Me.SiticoneLabel3.Name = "SiticoneLabel3"
-        Me.SiticoneLabel3.Size = New System.Drawing.Size(141, 23)
-        Me.SiticoneLabel3.TabIndex = 8
-        Me.SiticoneLabel3.Text = "Peminjaman Buku"
-        '
-        'SiticoneLabel4
-        '
-        Me.SiticoneLabel4.BackColor = System.Drawing.Color.Transparent
-        Me.SiticoneLabel4.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SiticoneLabel4.Location = New System.Drawing.Point(597, 186)
-        Me.SiticoneLabel4.Name = "SiticoneLabel4"
-        Me.SiticoneLabel4.Size = New System.Drawing.Size(158, 23)
-        Me.SiticoneLabel4.TabIndex = 9
-        Me.SiticoneLabel4.Text = "Pengembalian Buku"
+        Me.SiticoneDragControl1.TargetControl = Me.SiticoneGradientPanel1
         '
         'Admin_Panel
         '
@@ -161,6 +167,7 @@ Partial Class Admin_Panel
         Me.Controls.Add(Me.SiticoneGradientPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Admin_Panel"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Admin_Panel"
         Me.SiticoneGradientPanel1.ResumeLayout(False)
         Me.SiticoneGradientPanel1.PerformLayout()
@@ -183,4 +190,5 @@ Partial Class Admin_Panel
     Friend WithEvents SiticonePictureBox1 As ns1.SiticonePictureBox
     Friend WithEvents SiticoneLabel4 As ns1.SiticoneLabel
     Friend WithEvents SiticoneLabel3 As ns1.SiticoneLabel
+    Friend WithEvents SiticoneDragControl1 As ns1.SiticoneDragControl
 End Class

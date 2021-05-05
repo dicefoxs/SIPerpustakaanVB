@@ -3,7 +3,6 @@
     Private Property _idAnggota As Integer
     Private Property _StatusAnggota As String
     Private Property _StatusPinjam As Boolean
-    Private Property _Denda As Integer
     Private Property _idPinjam As Integer
 
 
@@ -15,7 +14,6 @@
             Return _idAnggota
         End Get
     End Property
-
     Public Overloads Property Nama As String
         Set(value As String)
             _Nama = value
@@ -56,4 +54,13 @@
             Return _JenisKel
         End Get
     End Property
+    Public Property idPinjam As Integer
+        Set(value As Integer)
+            _idPinjam = value
+        End Set
+        Get
+            Return _idPinjam
+        End Get
+    End Property
+
 End Class

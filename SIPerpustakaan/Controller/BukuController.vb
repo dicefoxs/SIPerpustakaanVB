@@ -1,21 +1,21 @@
 ﻿Class BukuController
-    Public ArrayBuku As List(Of Buku)
+    Public Property ArrayBuku As New List(Of Buku)
 
-    Public Sub BukuController()
+    Public Sub New()
         Dim buku As New Buku
         buku.idBuku = 1
         buku.namaBuku = "Modul PBO"
-        buku.namaPenerbit = "Lab RPL"
+        buku.idPenerbit = 1
         buku.jumlahBuku = 25
-        buku.idJenis = 1
+        buku.idKategori = 1
         addBuku(buku)
     End Sub
 
-    Public Sub addBuku(buku As Buku)
-        ArrayBuku.Add(buku)
+    Public Sub addBuku(ByVal buku As Buku)
+        Me.ArrayBuku.Add(buku)
     End Sub
 
-    Public Sub addBuku(buku As List(Of Buku))
+    Public Sub addBuku(ByVal buku As List(Of Buku))
         ArrayBuku = buku
     End Sub
 

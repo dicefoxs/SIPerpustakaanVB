@@ -1,11 +1,6 @@
 ﻿Public Class BookManagement
-    Public _book As List(Of Buku)
-
-    Public Sub setBook(value As List(Of Buku))
-        _book = value
-    End Sub
-
-    Private Sub BookManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Sub SiticonePictureBox1_Click(sender As Object, e As EventArgs) Handles SiticonePictureBox1.Click
+        Admin_Panel.Show()
+        Me.Dispose()
     End Sub
 End Class

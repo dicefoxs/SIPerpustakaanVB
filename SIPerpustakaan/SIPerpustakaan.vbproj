@@ -51,14 +51,8 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Guna.UI">
-      <HintPath>C:\Users\aardi\Documents\Guna UI Framework Ultimate 2.0.0.1\Guna UI Framework Ultimate v2.0.0.1 Lib-Master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Guna.UI2">
-      <HintPath>C:\Users\aardi\Documents\Guna UI Framework Ultimate 2.0.0.1\Guna UI Framework Ultimate v2.0.0.1 Lib-Master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
-    </Reference>
     <Reference Include="Siticone.UI">
-      <HintPath>C:\Users\aardi\Documents\Siticone.UI.dll</HintPath>
+      <HintPath>Resources\Siticone.UI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -89,6 +83,11 @@
     <Compile Include="CLASS\Anggota.vb" />
     <Compile Include="CLASS\Buku.vb" />
     <Compile Include="CLASS\Human.vb" />
+    <Compile Include="CLASS\Kategori.vb" />
+    <Compile Include="CLASS\Kembali.vb" />
+    <Compile Include="CLASS\Penerbit.vb" />
+    <Compile Include="CLASS\Pinjam.vb" />
+    <Compile Include="Controller\AnggotaController.vb" />
     <Compile Include="Controller\BukuController.vb" />
     <Compile Include="GUI\Admin_Panel.Designer.vb">
       <DependentUpon>Admin_Panel.vb</DependentUpon>
