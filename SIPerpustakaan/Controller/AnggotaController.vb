@@ -1,5 +1,5 @@
 ﻿Public Class AnggotaController
-    Public AnggotaArray As List(Of Anggota)
+    Public AnggotaArray As New List(Of Anggota)
     Public Sub New()
         Dim tgllahir As New Date(2001, 6, 11)
         Dim anggota As New Anggota
