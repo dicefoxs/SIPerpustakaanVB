@@ -8,6 +8,9 @@
     Private Sub MemberManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         JenisKelamin.SelectedIndex = 0
         stsAnggota.SelectedIndex = 0
+        SaveBtn.Enabled = False
+        EditBtn.Enabled = False
+        DeleteBtn.Enabled = False
         DGVShow()
     End Sub
 
@@ -24,13 +27,16 @@
         member.Alamat = alamatAnggota.Text
         member.JenisKel = JenisKelamin.SelectedItem.ToString()
         member.tglLahir = DateTimePicker1.Value
+        member.StatusAnggota = If(stsAnggota.SelectedIndex = 0, True, False)
         Return member
     End Function
+
+
 
     Private Sub DGVShow()
         For Each member As Anggota In members
             With member
-                SiticoneDataGridView1.Rows.Add(.idAnggota.ToString(), .Nama.ToString(), .NIK.ToString(), .Alamat.ToString(), .JenisKel.ToString(), .tglLahir.ToString(), If(.StatusAnggota, "Aktif", "Nonaktif"), If(.statusPinjam, "Pinjam", "Tidak Pinjam"))
+                SiticoneDataGridView1.Rows.Add(.idAnggota.ToString(), .Nama.ToString(), .NIK.ToString(), .Alamat.ToString(), .JenisKel.ToString(), .tglLahir.ToString("dd/MM/yyyy"), If(.StatusAnggota, "Aktif", "Nonaktif"), If(.statusPinjam, "Pinjam", "Tidak Pinjam"))
             End With
         Next
     End Sub
@@ -61,4 +67,63 @@
         End If
     End Sub
 
+
+    Private Sub Reset()
+        IdBox.Text = ""
+        namaAnggota.Text = ""
+        nikAnggota.Text = ""
+        alamatAnggota.Text = ""
+        JenisKelamin.SelectedIndex = 0
+        stsAnggota.SelectedIndex = 0
+        DateTimePicker1.Value = Format(Date.Now)
+        SaveBtn.Enabled = False
+        EditBtn.Enabled = False
+        DeleteBtn.Enabled = False
+    End Sub
+
+    Private Sub EditBtn_Click(sender As Object, e As EventArgs) Handles EditBtn.Click
+        Admin_Panel.UpdateAnggota(GetMember)
+        SiticoneDataGridView1.Rows.Clear()
+        DGVShow()
+        Reset()
+    End Sub
+
+    Private Sub newBtn_Click(sender As Object, e As EventArgs) Handles newBtn.Click
+        SaveBtn.Enabled = True
+        EditBtn.Enabled = False
+        DeleteBtn.Enabled = False
+        IdBox.Text = ""
+        namaAnggota.Text = ""
+        nikAnggota.Text = ""
+        alamatAnggota.Text = ""
+        JenisKelamin.SelectedIndex = 0
+        stsAnggota.SelectedIndex = 0
+        If Admin_Panel.getMembers().Count > 0 Then
+            IdBox.Text = Admin_Panel.getMembers().Last.idAnggota + 1
+        Else
+            IdBox.Text = 1
+        End If
+        DateTimePicker1.Value = Format(Date.Now)
+    End Sub
+
+    Private Sub ResetBtn_Click(sender As Object, e As EventArgs) Handles ResetBtn.Click
+        Reset()
+    End Sub
+
+    Private Sub SaveBtn_Click(sender As Object, e As EventArgs) Handles SaveBtn.Click
+        Admin_Panel.AddAnggota(GetMember)
+        SiticoneDataGridView1.Rows.Clear()
+        DGVShow()
+        Reset()
+    End Sub
+
+    Private Sub DeleteBtn_Click(sender As Object, e As EventArgs) Handles DeleteBtn.Click
+        Dim x As Object = MessageBox.Show("Apakah Anda Ingin Menghapus Data? Data yang terhapus akan hilang permanent!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+        If x = vbYes Then
+            Admin_Panel.DeleteAnggota(GetMember)
+            SiticoneDataGridView1.Rows.Clear()
+            DGVShow()
+            Reset()
+        End If
+    End Sub
 End Class

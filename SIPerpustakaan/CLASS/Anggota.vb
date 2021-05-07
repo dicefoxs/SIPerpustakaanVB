@@ -4,6 +4,9 @@
     Private Property _StatusAnggota As Boolean
     Private Property _StatusPinjam As Boolean
 
+    Public Sub New()
+        statusPinjam = False
+    End Sub
 
     Public Property idAnggota As Integer
         Set(value As Integer)

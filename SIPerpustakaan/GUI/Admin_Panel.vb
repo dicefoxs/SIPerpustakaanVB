@@ -25,6 +25,7 @@
     Public Function getPinjam() As List(Of Pinjam)
         Return _pinjam.getPinjam
     End Function
+    'store buku
     Public Sub AddBuku(ByVal buku As Buku)
         _buku.addBuku(buku)
     End Sub
@@ -33,6 +34,16 @@
     End Sub
     Public Sub DeleteBuku(ByVal buku As Buku)
         _buku.DeleteBuku(buku)
+    End Sub
+    'store anggota
+    Public Sub AddAnggota(ByVal member As Anggota)
+        _members.addAnggota(member)
+    End Sub
+    Public Sub UpdateAnggota(ByVal member As Anggota)
+        _members.updateAnggota(member)
+    End Sub
+    Public Sub DeleteAnggota(ByVal member As Anggota)
+        _members.deleteAnggota(member)
     End Sub
 
     Private Sub SiticonePictureBox1_Click(sender As Object, e As EventArgs) Handles SiticonePictureBox1.Click

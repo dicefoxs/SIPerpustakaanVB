@@ -10,7 +10,6 @@
         anggota.Alamat = "Tambak Pring Timur"
         anggota.tglLahir = tgllahir
         anggota.StatusAnggota = True
-        anggota.statusPinjam = False
         addAnggota(anggota)
     End Sub
 
@@ -22,20 +21,23 @@
         Return AnggotaArray
     End Function
 
-    Public Function getAnggota(idAnggota As Integer) As Anggota
-        For Each anggota As Anggota In AnggotaArray
-            If anggota.idAnggota = idAnggota Then
-                Return anggota
+    Public Sub deleteAnggota(ByVal anggota As Anggota)
+        For i = 0 To AnggotaArray.Count
+            If AnggotaArray(i).idAnggota = anggota.idAnggota Then
+                AnggotaArray.RemoveAt(i)
+                Exit For
             End If
-            Return Nothing
         Next
-    End Function
-
-    Public Sub deleteAnggota(idAnggota As Integer)
-        AnggotaArray.Remove(getAnggota(idAnggota))
     End Sub
 
-    Public Sub updateAnggota(idAnggota As Integer, anggota As Anggota)
-        AnggotaArray(idAnggota - 1) = anggota
+    Public Sub updateAnggota(ByVal anggota As Anggota)
+        Dim i As Integer = 0
+        For Each member As Anggota In AnggotaArray
+            If member.idAnggota = anggota.idAnggota Then
+                AnggotaArray(i) = anggota
+                Exit For
+            End If
+            i += 1
+        Next
     End Sub
 End Class

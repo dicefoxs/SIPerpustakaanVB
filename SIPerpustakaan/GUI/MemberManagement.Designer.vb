@@ -23,16 +23,18 @@ Partial Class MemberManagement
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SiticoneCustomGradientPanel1 = New ns1.SiticoneCustomGradientPanel()
+        Me.stsAnggota = New ns1.SiticoneComboBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.JenisKelamin = New ns1.SiticoneComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.IdBox = New ns1.SiticoneMaterialTextBox()
-        Me.addbook = New ns1.SiticoneButton()
+        Me.newBtn = New ns1.SiticoneButton()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.SiticoneButton4 = New ns1.SiticoneButton()
+        Me.ResetBtn = New ns1.SiticoneButton()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.DeleteBtn = New ns1.SiticoneButton()
         Me.EditBtn = New ns1.SiticoneButton()
@@ -45,10 +47,6 @@ Partial Class MemberManagement
         Me.nikAnggota = New ns1.SiticoneMaterialTextBox()
         Me.namaAnggota = New ns1.SiticoneMaterialTextBox()
         Me.SiticoneDataGridView1 = New ns1.SiticoneDataGridView()
-        Me.SiticonePanel1 = New ns1.SiticonePanel()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.SiticonePictureBox1 = New ns1.SiticonePictureBox()
-        Me.SiticoneDragControl1 = New ns1.SiticoneDragControl(Me.components)
         Me.nomor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nama = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nik = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -57,8 +55,10 @@ Partial Class MemberManagement
         Me.tgllahir = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.status = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.statuspjm = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.stsAnggota = New ns1.SiticoneComboBox()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.SiticonePanel1 = New ns1.SiticonePanel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.SiticonePictureBox1 = New ns1.SiticonePictureBox()
+        Me.SiticoneDragControl1 = New ns1.SiticoneDragControl(Me.components)
         Me.SiticoneCustomGradientPanel1.SuspendLayout()
         CType(Me.SiticoneDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SiticonePanel1.SuspendLayout()
@@ -72,9 +72,9 @@ Partial Class MemberManagement
         Me.SiticoneCustomGradientPanel1.Controls.Add(Me.JenisKelamin)
         Me.SiticoneCustomGradientPanel1.Controls.Add(Me.Label7)
         Me.SiticoneCustomGradientPanel1.Controls.Add(Me.IdBox)
-        Me.SiticoneCustomGradientPanel1.Controls.Add(Me.addbook)
+        Me.SiticoneCustomGradientPanel1.Controls.Add(Me.newBtn)
         Me.SiticoneCustomGradientPanel1.Controls.Add(Me.DateTimePicker1)
-        Me.SiticoneCustomGradientPanel1.Controls.Add(Me.SiticoneButton4)
+        Me.SiticoneCustomGradientPanel1.Controls.Add(Me.ResetBtn)
         Me.SiticoneCustomGradientPanel1.Controls.Add(Me.Label5)
         Me.SiticoneCustomGradientPanel1.Controls.Add(Me.DeleteBtn)
         Me.SiticoneCustomGradientPanel1.Controls.Add(Me.EditBtn)
@@ -94,6 +94,36 @@ Partial Class MemberManagement
         Me.SiticoneCustomGradientPanel1.Size = New System.Drawing.Size(1072, 586)
         Me.SiticoneCustomGradientPanel1.TabIndex = 6
         '
+        'stsAnggota
+        '
+        Me.stsAnggota.BackColor = System.Drawing.Color.Transparent
+        Me.stsAnggota.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.stsAnggota.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.stsAnggota.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.stsAnggota.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.stsAnggota.FormattingEnabled = True
+        Me.stsAnggota.HoveredState.Parent = Me.stsAnggota
+        Me.stsAnggota.ItemHeight = 30
+        Me.stsAnggota.Items.AddRange(New Object() {"Aktif", "Tidak Aktif"})
+        Me.stsAnggota.ItemsAppearance.Parent = Me.stsAnggota
+        Me.stsAnggota.Location = New System.Drawing.Point(190, 70)
+        Me.stsAnggota.Name = "stsAnggota"
+        Me.stsAnggota.ShadowDecoration.Parent = Me.stsAnggota
+        Me.stsAnggota.Size = New System.Drawing.Size(159, 36)
+        Me.stsAnggota.TabIndex = 25
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(209, Byte), Integer))
+        Me.Label8.Location = New System.Drawing.Point(186, 48)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(125, 19)
+        Me.Label8.TabIndex = 24
+        Me.Label8.Text = "Status Anggota"
+        '
         'JenisKelamin
         '
         Me.JenisKelamin.BackColor = System.Drawing.Color.Transparent
@@ -104,7 +134,7 @@ Partial Class MemberManagement
         Me.JenisKelamin.FormattingEnabled = True
         Me.JenisKelamin.HoveredState.Parent = Me.JenisKelamin
         Me.JenisKelamin.ItemHeight = 30
-        Me.JenisKelamin.Items.AddRange(New Object() {"Laki-Laki", "Perempuan"})
+        Me.JenisKelamin.Items.AddRange(New Object() {"Laki-laki", "Perempuan"})
         Me.JenisKelamin.ItemsAppearance.Parent = Me.JenisKelamin
         Me.JenisKelamin.Location = New System.Drawing.Point(610, 149)
         Me.JenisKelamin.Name = "JenisKelamin"
@@ -149,19 +179,19 @@ Partial Class MemberManagement
         Me.IdBox.Size = New System.Drawing.Size(150, 36)
         Me.IdBox.TabIndex = 21
         '
-        'addbook
+        'newBtn
         '
-        Me.addbook.CheckedState.Parent = Me.addbook
-        Me.addbook.CustomImages.Parent = Me.addbook
-        Me.addbook.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.addbook.ForeColor = System.Drawing.Color.White
-        Me.addbook.HoveredState.Parent = Me.addbook
-        Me.addbook.Location = New System.Drawing.Point(701, 231)
-        Me.addbook.Name = "addbook"
-        Me.addbook.ShadowDecoration.Parent = Me.addbook
-        Me.addbook.Size = New System.Drawing.Size(107, 45)
-        Me.addbook.TabIndex = 20
-        Me.addbook.Text = "New"
+        Me.newBtn.CheckedState.Parent = Me.newBtn
+        Me.newBtn.CustomImages.Parent = Me.newBtn
+        Me.newBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.newBtn.ForeColor = System.Drawing.Color.White
+        Me.newBtn.HoveredState.Parent = Me.newBtn
+        Me.newBtn.Location = New System.Drawing.Point(701, 231)
+        Me.newBtn.Name = "newBtn"
+        Me.newBtn.ShadowDecoration.Parent = Me.newBtn
+        Me.newBtn.Size = New System.Drawing.Size(107, 45)
+        Me.newBtn.TabIndex = 20
+        Me.newBtn.Text = "New"
         '
         'DateTimePicker1
         '
@@ -170,19 +200,19 @@ Partial Class MemberManagement
         Me.DateTimePicker1.Size = New System.Drawing.Size(157, 20)
         Me.DateTimePicker1.TabIndex = 19
         '
-        'SiticoneButton4
+        'ResetBtn
         '
-        Me.SiticoneButton4.CheckedState.Parent = Me.SiticoneButton4
-        Me.SiticoneButton4.CustomImages.Parent = Me.SiticoneButton4
-        Me.SiticoneButton4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.SiticoneButton4.ForeColor = System.Drawing.Color.White
-        Me.SiticoneButton4.HoveredState.Parent = Me.SiticoneButton4
-        Me.SiticoneButton4.Location = New System.Drawing.Point(588, 231)
-        Me.SiticoneButton4.Name = "SiticoneButton4"
-        Me.SiticoneButton4.ShadowDecoration.Parent = Me.SiticoneButton4
-        Me.SiticoneButton4.Size = New System.Drawing.Size(107, 45)
-        Me.SiticoneButton4.TabIndex = 19
-        Me.SiticoneButton4.Text = "Reset"
+        Me.ResetBtn.CheckedState.Parent = Me.ResetBtn
+        Me.ResetBtn.CustomImages.Parent = Me.ResetBtn
+        Me.ResetBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.ResetBtn.ForeColor = System.Drawing.Color.White
+        Me.ResetBtn.HoveredState.Parent = Me.ResetBtn
+        Me.ResetBtn.Location = New System.Drawing.Point(588, 231)
+        Me.ResetBtn.Name = "ResetBtn"
+        Me.ResetBtn.ShadowDecoration.Parent = Me.ResetBtn
+        Me.ResetBtn.Size = New System.Drawing.Size(107, 45)
+        Me.ResetBtn.TabIndex = 19
+        Me.ResetBtn.Text = "Reset"
         '
         'Label5
         '
@@ -367,40 +397,39 @@ Partial Class MemberManagement
         Me.SiticoneDataGridView1.AllowUserToDeleteRows = False
         Me.SiticoneDataGridView1.AllowUserToResizeColumns = False
         Me.SiticoneDataGridView1.AllowUserToResizeRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        Me.SiticoneDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        Me.SiticoneDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.SiticoneDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.SiticoneDataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.SiticoneDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.SiticoneDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.SiticoneDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.SiticoneDataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SiticoneDataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.SiticoneDataGridView1.ColumnHeadersHeight = 21
         Me.SiticoneDataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nomor, Me.nama, Me.nik, Me.alamat, Me.jeniskel, Me.tgllahir, Me.status, Me.statuspjm})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.SiticoneDataGridView1.DefaultCellStyle = DataGridViewCellStyle6
-        Me.SiticoneDataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.SiticoneDataGridView1.DefaultCellStyle = DataGridViewCellStyle9
         Me.SiticoneDataGridView1.EnableHeadersVisualStyles = False
         Me.SiticoneDataGridView1.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.SiticoneDataGridView1.Location = New System.Drawing.Point(0, 294)
+        Me.SiticoneDataGridView1.Location = New System.Drawing.Point(9, 294)
         Me.SiticoneDataGridView1.Name = "SiticoneDataGridView1"
         Me.SiticoneDataGridView1.ReadOnly = True
         Me.SiticoneDataGridView1.RowHeadersVisible = False
         Me.SiticoneDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.SiticoneDataGridView1.Size = New System.Drawing.Size(1072, 292)
+        Me.SiticoneDataGridView1.Size = New System.Drawing.Size(1051, 280)
         Me.SiticoneDataGridView1.TabIndex = 0
         Me.SiticoneDataGridView1.Theme = ns5.DataGridViewPresetThemes.[Default]
         Me.SiticoneDataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
@@ -424,6 +453,62 @@ Partial Class MemberManagement
         Me.SiticoneDataGridView1.ThemeStyle.RowsStyle.Height = 22
         Me.SiticoneDataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.SiticoneDataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        '
+        'nomor
+        '
+        Me.nomor.FillWeight = 5.0!
+        Me.nomor.HeaderText = "No."
+        Me.nomor.Name = "nomor"
+        Me.nomor.ReadOnly = True
+        '
+        'nama
+        '
+        Me.nama.FillWeight = 14.2857!
+        Me.nama.HeaderText = "Nama Anggota"
+        Me.nama.Name = "nama"
+        Me.nama.ReadOnly = True
+        '
+        'nik
+        '
+        Me.nik.FillWeight = 14.2857!
+        Me.nik.HeaderText = "NIK"
+        Me.nik.Name = "nik"
+        Me.nik.ReadOnly = True
+        '
+        'alamat
+        '
+        Me.alamat.FillWeight = 14.2857!
+        Me.alamat.HeaderText = "Alamat"
+        Me.alamat.Name = "alamat"
+        Me.alamat.ReadOnly = True
+        '
+        'jeniskel
+        '
+        Me.jeniskel.FillWeight = 14.2857!
+        Me.jeniskel.HeaderText = "Jenis Kelamin"
+        Me.jeniskel.Name = "jeniskel"
+        Me.jeniskel.ReadOnly = True
+        '
+        'tgllahir
+        '
+        Me.tgllahir.FillWeight = 14.2857!
+        Me.tgllahir.HeaderText = "Tanggal Lahir"
+        Me.tgllahir.Name = "tgllahir"
+        Me.tgllahir.ReadOnly = True
+        '
+        'status
+        '
+        Me.status.FillWeight = 14.2857!
+        Me.status.HeaderText = "status"
+        Me.status.Name = "status"
+        Me.status.ReadOnly = True
+        '
+        'statuspjm
+        '
+        Me.statuspjm.FillWeight = 14.2857!
+        Me.statuspjm.HeaderText = "Status Pinjam"
+        Me.statuspjm.Name = "statuspjm"
+        Me.statuspjm.ReadOnly = True
         '
         'SiticonePanel1
         '
@@ -466,92 +551,6 @@ Partial Class MemberManagement
         '
         Me.SiticoneDragControl1.TargetControl = Me.SiticonePanel1
         '
-        'nomor
-        '
-        Me.nomor.FillWeight = 5.0!
-        Me.nomor.HeaderText = "No."
-        Me.nomor.Name = "nomor"
-        Me.nomor.ReadOnly = True
-        '
-        'nama
-        '
-        Me.nama.FillWeight = 14.54857!
-        Me.nama.HeaderText = "Nama Anggota"
-        Me.nama.Name = "nama"
-        Me.nama.ReadOnly = True
-        '
-        'nik
-        '
-        Me.nik.FillWeight = 14.54857!
-        Me.nik.HeaderText = "NIK"
-        Me.nik.Name = "nik"
-        Me.nik.ReadOnly = True
-        '
-        'alamat
-        '
-        Me.alamat.FillWeight = 14.54857!
-        Me.alamat.HeaderText = "Alamat"
-        Me.alamat.Name = "alamat"
-        Me.alamat.ReadOnly = True
-        '
-        'jeniskel
-        '
-        Me.jeniskel.FillWeight = 14.54857!
-        Me.jeniskel.HeaderText = "Jenis Kelamin"
-        Me.jeniskel.Name = "jeniskel"
-        Me.jeniskel.ReadOnly = True
-        '
-        'tgllahir
-        '
-        Me.tgllahir.FillWeight = 14.54857!
-        Me.tgllahir.HeaderText = "Tanggal Lahir"
-        Me.tgllahir.Name = "tgllahir"
-        Me.tgllahir.ReadOnly = True
-        '
-        'status
-        '
-        Me.status.FillWeight = 14.54857!
-        Me.status.HeaderText = "status"
-        Me.status.Name = "status"
-        Me.status.ReadOnly = True
-        '
-        'statuspjm
-        '
-        Me.statuspjm.FillWeight = 14.54857!
-        Me.statuspjm.HeaderText = "Status Pinjam"
-        Me.statuspjm.Name = "statuspjm"
-        Me.statuspjm.ReadOnly = True
-        '
-        'stsAnggota
-        '
-        Me.stsAnggota.BackColor = System.Drawing.Color.Transparent
-        Me.stsAnggota.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.stsAnggota.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.stsAnggota.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.stsAnggota.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.stsAnggota.FormattingEnabled = True
-        Me.stsAnggota.HoveredState.Parent = Me.stsAnggota
-        Me.stsAnggota.ItemHeight = 30
-        Me.stsAnggota.Items.AddRange(New Object() {"Aktif", "Tidak Aktif"})
-        Me.stsAnggota.ItemsAppearance.Parent = Me.stsAnggota
-        Me.stsAnggota.Location = New System.Drawing.Point(190, 70)
-        Me.stsAnggota.Name = "stsAnggota"
-        Me.stsAnggota.ShadowDecoration.Parent = Me.stsAnggota
-        Me.stsAnggota.Size = New System.Drawing.Size(159, 36)
-        Me.stsAnggota.TabIndex = 25
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(209, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(186, 48)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(125, 19)
-        Me.Label8.TabIndex = 24
-        Me.Label8.Text = "Status Anggota"
-        '
         'MemberManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -588,14 +587,16 @@ Partial Class MemberManagement
     Friend WithEvents Label5 As Label
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Label6 As Label
-    Friend WithEvents addbook As ns1.SiticoneButton
-    Friend WithEvents SiticoneButton4 As ns1.SiticoneButton
+    Friend WithEvents newBtn As ns1.SiticoneButton
+    Friend WithEvents ResetBtn As ns1.SiticoneButton
     Friend WithEvents DeleteBtn As ns1.SiticoneButton
     Friend WithEvents EditBtn As ns1.SiticoneButton
     Friend WithEvents SaveBtn As ns1.SiticoneButton
     Friend WithEvents Label7 As Label
     Friend WithEvents IdBox As ns1.SiticoneMaterialTextBox
     Friend WithEvents JenisKelamin As ns1.SiticoneComboBox
+    Friend WithEvents stsAnggota As ns1.SiticoneComboBox
+    Friend WithEvents Label8 As Label
     Friend WithEvents nomor As DataGridViewTextBoxColumn
     Friend WithEvents nama As DataGridViewTextBoxColumn
     Friend WithEvents nik As DataGridViewTextBoxColumn
@@ -604,6 +605,4 @@ Partial Class MemberManagement
     Friend WithEvents tgllahir As DataGridViewTextBoxColumn
     Friend WithEvents status As DataGridViewTextBoxColumn
     Friend WithEvents statuspjm As DataGridViewTextBoxColumn
-    Friend WithEvents stsAnggota As ns1.SiticoneComboBox
-    Friend WithEvents Label8 As Label
 End Class
