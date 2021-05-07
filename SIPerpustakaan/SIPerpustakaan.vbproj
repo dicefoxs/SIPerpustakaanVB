@@ -90,6 +90,8 @@
     <Compile Include="Controller\AnggotaController.vb" />
     <Compile Include="Controller\BukuController.vb" />
     <Compile Include="Controller\KategoriController.vb" />
+    <Compile Include="Controller\PenerbitController.vb" />
+    <Compile Include="Controller\PinjamController.vb" />
     <Compile Include="GUI\Admin_Panel.Designer.vb">
       <DependentUpon>Admin_Panel.vb</DependentUpon>
     </Compile>
@@ -118,6 +120,18 @@
       <DependentUpon>splash.vb</DependentUpon>
     </Compile>
     <Compile Include="GUI\splash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\TambahKategori.Designer.vb">
+      <DependentUpon>TambahKategori.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\TambahKategori.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\TambahPenerbit.Designer.vb">
+      <DependentUpon>TambahPenerbit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\TambahPenerbit.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -151,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\splash.resx">
       <DependentUpon>splash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\TambahPenerbit.resx">
+      <DependentUpon>TambahPenerbit.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

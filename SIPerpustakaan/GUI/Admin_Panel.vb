@@ -1,9 +1,14 @@
-﻿Imports System.Reflection
-Public Class Admin_Panel
+﻿Public Class Admin_Panel
     Dim _buku As New BukuController
     Dim _members As New AnggotaController
     Dim _kategori As New KategoriController
-    Dim buku As New Buku
+    Dim _pinjam As New PinjamController
+    Dim _penerbit As New PenerbitController
+
+
+    Public Function getPenerbit() As List(Of Penerbit)
+        Return _penerbit.getPenerbits
+    End Function
 
     Public Function getBuku() As List(Of Buku)
         Return _buku.getBuku
@@ -14,8 +19,21 @@ Public Class Admin_Panel
     End Function
 
     Public Function getKategori() As List(Of Kategori)
-        Return _kategori.getKategory
+        Return _kategori.getKategori
     End Function
+
+    Public Function getPinjam() As List(Of Pinjam)
+        Return _pinjam.getPinjam
+    End Function
+    Public Sub AddBuku(ByVal buku As Buku)
+        _buku.addBuku(buku)
+    End Sub
+    Public Sub UpdateBuku(ByVal buku As Buku)
+        _buku.UpdateBuku(buku)
+    End Sub
+    Public Sub DeleteBuku(ByVal buku As Buku)
+        _buku.DeleteBuku(buku)
+    End Sub
 
     Private Sub SiticonePictureBox1_Click(sender As Object, e As EventArgs) Handles SiticonePictureBox1.Click
         Dim x As Object = MessageBox.Show("Ingin Keluar Aplikasi", "exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -26,7 +44,10 @@ Public Class Admin_Panel
     End Sub
 
     Private Sub Admin_Panel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Dim kategori As New Kategori
+        kategori.idKategori = 2
+        kategori.namaKategori = "Komik"
+        _kategori.addKategori(kategori)
     End Sub
 
     Private Sub SiticonePictureBox2_Click(sender As Object, e As EventArgs) Handles SiticonePictureBox2.Click
