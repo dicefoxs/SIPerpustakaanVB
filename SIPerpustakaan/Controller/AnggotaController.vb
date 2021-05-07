@@ -9,7 +9,8 @@
         anggota.NIK = "9879845646"
         anggota.Alamat = "Tambak Pring Timur"
         anggota.tglLahir = tgllahir
-        anggota.idPinjam = Nothing
+        anggota.StatusAnggota = True
+        anggota.statusPinjam = False
         addAnggota(anggota)
     End Sub
 
@@ -25,9 +26,8 @@
         For Each anggota As Anggota In AnggotaArray
             If anggota.idAnggota = idAnggota Then
                 Return anggota
-            Else
-                Return Nothing
             End If
+            Return Nothing
         Next
     End Function
 

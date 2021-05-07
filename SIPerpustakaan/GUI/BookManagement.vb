@@ -1,8 +1,5 @@
 ﻿Public Class BookManagement
-    'Dim books As List(Of Buku) = Admin_Panel.getBuku()
-    'Dim kats As List(Of Kategori) = Admin_Panel.getKategori()
-    'Dim penerbits As List(Of Penerbit) = Admin_Panel.getPenerbit()
-    'Dim Key As Integer
+
     Private Sub SiticonePictureBox1_Click(sender As Object, e As EventArgs) Handles SiticonePictureBox1.Click
         Admin_Panel.Show()
         Me.Dispose()

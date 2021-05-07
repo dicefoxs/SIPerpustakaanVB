@@ -1,9 +1,8 @@
 ﻿Public Class Anggota
     Inherits Human
     Private Property _idAnggota As Integer
-    Private Property _StatusAnggota As String
+    Private Property _StatusAnggota As Boolean
     Private Property _StatusPinjam As Boolean
-    Private Property _idPinjam As Integer
 
 
     Public Property idAnggota As Integer
@@ -54,12 +53,20 @@
             Return _JenisKel
         End Get
     End Property
-    Public Property idPinjam As Integer
-        Set(value As Integer)
-            _idPinjam = value
+    Public Property StatusAnggota As Boolean
+        Set(value As Boolean)
+            _StatusAnggota = value
         End Set
         Get
-            Return _idPinjam
+            Return _StatusAnggota
+        End Get
+    End Property
+    Public Property statusPinjam As Boolean
+        Set(value As Boolean)
+            _StatusPinjam = value
+        End Set
+        Get
+            Return _StatusPinjam
         End Get
     End Property
 
