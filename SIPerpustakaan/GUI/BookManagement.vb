@@ -79,16 +79,18 @@
             NamaBuku.Text = row.Cells(1).Value.ToString()
             JmlBuku.Value = row.Cells(2).Value
             KatBuku.SelectedValue = getBuku(row.Cells(0).Value).idKategori
+            KatPenerbit.SelectedValue = getBuku(row.Cells(0).Value).idPenerbit
 
         End If
     End Sub
 
     Private Sub addbook_Click(sender As Object, e As EventArgs) Handles addbook.Click
-        SaveBtn.Enabled = True
         EditBtn.Enabled = False
         DeleteBtn.Enabled = False
 
         Reset()
+
+        SaveBtn.Enabled = True
         If Admin_Panel.getBuku().Count > 0 Then
             IdBox.Text = Admin_Panel.getBuku().Last.idBuku + 1
         Else

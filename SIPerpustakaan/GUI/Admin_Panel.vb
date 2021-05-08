@@ -93,4 +93,8 @@
         Me.Hide()
     End Sub
 
+    Private Sub SiticonePictureBox5_Click(sender As Object, e As EventArgs) Handles SiticonePictureBox5.Click
+        PengembalianBuku.Show()
+        Me.Hide()
+    End Sub
 End Class

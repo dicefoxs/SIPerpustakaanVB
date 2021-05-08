@@ -9,6 +9,15 @@
         buku.jumlahBuku = 25
         buku.idKategori = 1
         addBuku(buku)
+        For i = 2 To 20
+            Dim buku1 As New Buku
+            buku1.idBuku = i
+            buku1.namaBuku = "Buku" & i.ToString()
+            buku1.idPenerbit = i
+            buku1.jumlahBuku = 25
+            buku1.idKategori = 1
+            addBuku(buku1)
+        Next
     End Sub
 
     Public Sub addBuku(ByVal buku As Buku)
