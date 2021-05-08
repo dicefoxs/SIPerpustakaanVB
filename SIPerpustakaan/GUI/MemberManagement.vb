@@ -82,10 +82,14 @@
     End Sub
 
     Private Sub EditBtn_Click(sender As Object, e As EventArgs) Handles EditBtn.Click
-        Admin_Panel.UpdateAnggota(GetMember)
-        SiticoneDataGridView1.Rows.Clear()
-        DGVShow()
-        Reset()
+        If namaAnggota.Text = "" Or nikAnggota.Text = "" Or alamatAnggota.Text = "" Then
+            MessageBox.Show("Harap Isi Semua Field", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            Admin_Panel.UpdateAnggota(GetMember)
+            SiticoneDataGridView1.Rows.Clear()
+            DGVShow()
+            Reset()
+        End If
     End Sub
 
     Private Sub newBtn_Click(sender As Object, e As EventArgs) Handles newBtn.Click
@@ -111,10 +115,14 @@
     End Sub
 
     Private Sub SaveBtn_Click(sender As Object, e As EventArgs) Handles SaveBtn.Click
-        Admin_Panel.AddAnggota(GetMember)
-        SiticoneDataGridView1.Rows.Clear()
-        DGVShow()
-        Reset()
+        If namaAnggota.Text = "" Or nikAnggota.Text = "" Or alamatAnggota.Text = "" Then
+            MessageBox.Show("Harap Isi Semua Field", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            Admin_Panel.AddAnggota(GetMember)
+            SiticoneDataGridView1.Rows.Clear()
+            DGVShow()
+            Reset()
+        End If
     End Sub
 
     Private Sub DeleteBtn_Click(sender As Object, e As EventArgs) Handles DeleteBtn.Click

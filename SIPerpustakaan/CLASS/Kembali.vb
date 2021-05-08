@@ -4,6 +4,7 @@
     Private Property _idPinjam As Integer
     Private Property _Denda As Integer
     Private Property _idAnggota As Integer
+    Private Property _idBuku As Integer
     Private Property _tglKembali As Date
 
     Public Property idKembali As Integer

@@ -4,8 +4,8 @@
     Dim _kategori As New KategoriController
     Dim _pinjam As New PinjamController
     Dim _penerbit As New PenerbitController
-
-
+    Dim _kembali As New KembaliController
+    'Get data
     Public Function getPenerbit() As List(Of Penerbit)
         Return _penerbit.getPenerbits
     End Function
@@ -24,6 +24,9 @@
 
     Public Function getPinjam() As List(Of Pinjam)
         Return _pinjam.getPinjam
+    End Function
+    Public Function getKembali() As List(Of Kembali)
+        Return _kembali.getKembali
     End Function
     'store buku
     Public Sub AddBuku(ByVal buku As Buku)
@@ -44,6 +47,20 @@
     End Sub
     Public Sub DeleteAnggota(ByVal member As Anggota)
         _members.deleteAnggota(member)
+    End Sub
+    'store pinjam
+    Public Sub AddPinjam(ByVal pinjam As Pinjam)
+        _pinjam.addPinjam(pinjam)
+    End Sub
+    Public Sub UpdatePinjam(ByVal pinjam As Pinjam)
+        _pinjam.UpdatePinjam(pinjam)
+    End Sub
+    Public Sub DeletePinjam(ByVal pinjam As Pinjam)
+        _pinjam.DeletePinjam(pinjam)
+    End Sub
+    'store kembali
+    Public Sub AddKembali(ByVal kembali As Kembali)
+        _kembali.addKembali(kembali)
     End Sub
 
     Private Sub SiticonePictureBox1_Click(sender As Object, e As EventArgs) Handles SiticonePictureBox1.Click
@@ -70,4 +87,10 @@
         MemberManagement.Show()
         Me.Hide()
     End Sub
+
+    Private Sub SiticonePictureBox4_Click(sender As Object, e As EventArgs) Handles SiticonePictureBox4.Click
+        PinjamBuku.Show()
+        Me.Hide()
+    End Sub
+
 End Class

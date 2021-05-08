@@ -87,6 +87,8 @@
         SaveBtn.Enabled = True
         EditBtn.Enabled = False
         DeleteBtn.Enabled = False
+
+        Reset()
         If Admin_Panel.getBuku().Count > 0 Then
             IdBox.Text = Admin_Panel.getBuku().Last.idBuku + 1
         Else
@@ -96,17 +98,26 @@
     End Sub
 
     Private Sub SaveBtn_Click(sender As Object, e As EventArgs) Handles SaveBtn.Click
-        Admin_Panel.AddBuku(GetBuku)
-        SiticoneDataGridView1.Rows.Clear()
-        DGVShow()
-        Reset()
+        If NamaBuku.Text = "" Then
+            MessageBox.Show("Harap Isi Nama Buku", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            Admin_Panel.AddBuku(GetBuku)
+            SiticoneDataGridView1.Rows.Clear()
+            DGVShow()
+            Reset()
+        End If
+
     End Sub
 
     Private Sub EditBtn_Click(sender As Object, e As EventArgs) Handles EditBtn.Click
-        Admin_Panel.UpdateBuku(GetBuku)
-        SiticoneDataGridView1.Rows.Clear()
-        DGVShow()
-        Reset()
+        If NamaBuku.Text = "" Then
+            MessageBox.Show("Harap Isi Nama Buku", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            Admin_Panel.UpdateBuku(GetBuku)
+            SiticoneDataGridView1.Rows.Clear()
+            DGVShow()
+            Reset()
+        End If
     End Sub
 
     Private Sub SiticoneButton4_Click_1(sender As Object, e As EventArgs) Handles SiticoneButton4.Click

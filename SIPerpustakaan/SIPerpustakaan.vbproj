@@ -116,6 +116,12 @@
     <Compile Include="GUI\MemberManagement.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GUI\PinjamBuku.Designer.vb">
+      <DependentUpon>PinjamBuku.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PinjamBuku.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUI\splash.Designer.vb">
       <DependentUpon>splash.vb</DependentUpon>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MemberManagement.resx">
       <DependentUpon>MemberManagement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PinjamBuku.resx">
+      <DependentUpon>PinjamBuku.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\splash.resx">
       <DependentUpon>splash.vb</DependentUpon>

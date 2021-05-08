@@ -3,7 +3,11 @@
     Private Property _idAnggota As Integer
     Private Property _idBuku As Integer
     Private Property _tglPinjam As Date
-    Private Property _tglKembali As Date
+    Private Property _statusPinjam As Boolean
+
+    Public Sub New()
+        statusPinjam = False
+    End Sub
 
     Public Property idPinjam As Integer
         Set(value As Integer)
@@ -23,12 +27,21 @@
         End Get
     End Property
 
-    Public Property tglKembali As Date
-        Set(value As Date)
-            _tglKembali = value
+    Public Property statusPinjam As Boolean
+        Set(value As Boolean)
+            _statusPinjam = value
         End Set
         Get
-            Return _tglKembali
+            Return _statusPinjam
+        End Get
+    End Property
+
+    Public Property idAnggota As Integer
+        Set(value As Integer)
+            _idAnggota = value
+        End Set
+        Get
+            Return _idAnggota
         End Get
     End Property
 
