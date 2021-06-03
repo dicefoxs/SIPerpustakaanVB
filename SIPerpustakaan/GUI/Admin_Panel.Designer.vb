@@ -23,6 +23,7 @@ Partial Class Admin_Panel
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Admin_Panel))
         Me.SiticoneGradientPanel1 = New ns1.SiticoneGradientPanel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -182,6 +183,7 @@ Partial Class Admin_Panel
         Me.ClientSize = New System.Drawing.Size(800, 264)
         Me.Controls.Add(Me.SiticoneGradientPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Admin_Panel"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Admin_Panel"

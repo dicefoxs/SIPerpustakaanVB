@@ -26,6 +26,7 @@ Partial Class PengembalianBuku
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PengembalianBuku))
         Me.SiticoneDragControl1 = New ns1.SiticoneDragControl(Me.components)
         Me.SiticonePanel1 = New ns1.SiticonePanel()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -508,6 +509,7 @@ Partial Class PengembalianBuku
         Me.Controls.Add(Me.SiticoneCustomGradientPanel1)
         Me.Controls.Add(Me.SiticonePanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "PengembalianBuku"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "PinjamBuku"

@@ -4,6 +4,7 @@
     Protected Property _TglLahir As Date
     Protected Property _Alamat As String
     Protected Property _JenisKel As String
+    Protected Property _NoTelp As String
 
     Public Property Nama As String
         Set(value As String)
@@ -46,5 +47,13 @@
         End Get
     End Property
 
+    Public Property NoTelp As String
+        Set(value As String)
+            _NoTelp = value
+        End Set
+        Get
+            Return _NoTelp
+        End Get
+    End Property
 
 End Class

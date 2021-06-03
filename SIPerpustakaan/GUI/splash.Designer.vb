@@ -23,6 +23,7 @@ Partial Class splash
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(splash))
         Me.SiticoneProgressBar1 = New ns1.SiticoneProgressBar()
         Me.SiticonePictureBox1 = New ns1.SiticonePictureBox()
         Me.SiticoneLabel1 = New ns1.SiticoneLabel()
@@ -100,6 +101,7 @@ Partial Class splash
         Me.Controls.Add(Me.SiticonePictureBox1)
         Me.Controls.Add(Me.SiticoneProgressBar1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "splash"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "splash"

@@ -1,8 +1,4 @@
 ﻿Public Class MemberManagement
-    Dim books As List(Of Buku) = Admin_Panel.getBuku
-    Dim kats As List(Of Kategori) = Admin_Panel.getKategori
-    Dim penerbits As List(Of Penerbit) = Admin_Panel.getPenerbit
-    Dim members As List(Of Anggota) = Admin_Panel.getMembers
 
 
     Private Sub MemberManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -27,18 +23,15 @@
         member.Alamat = alamatAnggota.Text
         member.JenisKel = JenisKelamin.SelectedItem.ToString()
         member.tglLahir = DateTimePicker1.Value
-        member.StatusAnggota = If(stsAnggota.SelectedIndex = 0, True, False)
+        member.StatusAnggota = stsAnggota.SelectedIndex
+        member.NoTelp = NoTelp.Text
         Return member
     End Function
 
 
 
     Private Sub DGVShow()
-        For Each member As Anggota In members
-            With member
-                SiticoneDataGridView1.Rows.Add(.idAnggota.ToString(), .Nama.ToString(), .NIK.ToString(), .Alamat.ToString(), .JenisKel.ToString(), .tglLahir.ToString("dd/MM/yyyy"), If(.StatusAnggota, "Aktif", "Nonaktif"), If(.statusPinjam, "Pinjam", "Tidak Pinjam"))
-            End With
-        Next
+        SiticoneDataGridView1.DataSource = Admin_Panel.getMemberss.Tables("member")
     End Sub
 
     Private Sub SiticoneDataGridView1_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles SiticoneDataGridView1.CellMouseClick
@@ -49,20 +42,21 @@
             Dim row As DataGridViewRow = SiticoneDataGridView1.Rows(e.RowIndex)
             IdBox.Text = row.Cells(0).Value.ToString()
             namaAnggota.Text = row.Cells(1).Value.ToString()
-            nikAnggota.Text = row.Cells(2).Value
-            alamatAnggota.Text = row.Cells(3).Value.ToString
+            nikAnggota.Text = row.Cells(4).Value
+            alamatAnggota.Text = row.Cells(2).Value.ToString
             For i = 0 To 1
-                If row.Cells(4).Value.ToString().Equals("Laki-laki") Then
+                If row.Cells(5).Value.ToString().Equals("Laki-laki") Then
                     JenisKelamin.SelectedIndex = 0
                 Else
                     JenisKelamin.SelectedIndex = 1
                 End If
             Next
-            DateTimePicker1.Value = row.Cells(5).Value.ToString()
-            If row.Cells(6).Value.ToString.Equals("Aktif") Then
-                stsAnggota.SelectedIndex = 0
-            Else
+            DateTimePicker1.Value = row.Cells(6).Value.ToString()
+            NoTelp.Text = row.Cells(3).Value.ToString()
+            If row.Cells(7).Value = 1 Then
                 stsAnggota.SelectedIndex = 1
+            Else
+                stsAnggota.SelectedIndex = 0
             End If
         End If
     End Sub
@@ -75,6 +69,7 @@
         alamatAnggota.Text = ""
         JenisKelamin.SelectedIndex = 0
         stsAnggota.SelectedIndex = 0
+        NoTelp.Text = ""
         DateTimePicker1.Value = Format(Date.Now)
         SaveBtn.Enabled = False
         EditBtn.Enabled = False
@@ -86,7 +81,6 @@
             MessageBox.Show("Harap Isi Semua Field", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
             Admin_Panel.UpdateAnggota(GetMember)
-            SiticoneDataGridView1.Rows.Clear()
             DGVShow()
             Reset()
         End If
@@ -100,13 +94,20 @@
         namaAnggota.Text = ""
         nikAnggota.Text = ""
         alamatAnggota.Text = ""
+        NoTelp.Text = ""
         JenisKelamin.SelectedIndex = 0
         stsAnggota.SelectedIndex = 0
-        If Admin_Panel.getMembers().Count > 0 Then
-            IdBox.Text = Admin_Panel.getMembers().Last.idAnggota + 1
-        Else
-            IdBox.Text = 1
-        End If
+        Try
+            conn.Open()
+            cmd = New MySql.Data.MySqlClient.MySqlCommand("SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'db_perpus' AND TABLE_NAME = 'member'", conn)
+            IdBox.Text = cmd.ExecuteScalar().ToString
+            conn.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            conn.Dispose()
+        End Try
+
         DateTimePicker1.Value = Format(Date.Now)
     End Sub
 
@@ -119,7 +120,6 @@
             MessageBox.Show("Harap Isi Semua Field", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
             Admin_Panel.AddAnggota(GetMember)
-            SiticoneDataGridView1.Rows.Clear()
             DGVShow()
             Reset()
         End If
@@ -129,7 +129,6 @@
         Dim x As Object = MessageBox.Show("Apakah Anda Ingin Menghapus Data? Data yang terhapus akan hilang permanent!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
         If x = vbYes Then
             Admin_Panel.DeleteAnggota(GetMember)
-            SiticoneDataGridView1.Rows.Clear()
             DGVShow()
             Reset()
         End If

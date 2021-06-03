@@ -2,7 +2,6 @@
     Dim books As List(Of Buku) = Admin_Panel.getBuku
     Dim kats As List(Of Kategori) = Admin_Panel.getKategori
     Dim penerbits As List(Of Penerbit) = Admin_Panel.getPenerbit
-    Dim members As List(Of Anggota) = Admin_Panel.getMembers
     Dim pinjams As List(Of Pinjam) = Admin_Panel.getPinjam
 
     Private Function setPinjam() As Pinjam
@@ -32,27 +31,7 @@
         Next
     End Function
 
-    Private Function getAnggota(ByVal id As Integer) As Anggota
-
-        Dim i As Integer = 0
-        For Each anggota As Anggota In members
-            If members(i).idAnggota = id Then
-                Return members(i)
-            End If
-            i += 1
-        Next
-    End Function
-
     Public Sub DGView()
-        Dim i As Integer = 0
-        For Each pinjam As Pinjam In pinjams
-            SiticoneDataGridView1.Rows.Add(pinjams(i).idPinjam.ToString(),
-                                           getBuku(pinjams(i).idBuku).namaBuku.ToString,
-                                           getAnggota(pinjams(i).idAnggota).Nama.ToString,
-                                           pinjams(i).tglPinjam.ToString("dd/MM/yyy"),
-                                           If(pinjams(i).statusPinjam, "Sudah Kembali", "Belum Kembali"))
-            i += 1
-        Next
     End Sub
 
     Private Sub Reset()
@@ -61,8 +40,7 @@
         DeleteBtn.Enabled = False
         IdBukuBox.SelectedValue = 1
         NamaBuku.Text = getBuku(IdBukuBox.SelectedValue).namaBuku
-        IdMemberBox.SelectedValue = 1
-        NamaAnggota.Text = getAnggota(IdMemberBox.SelectedValue).Nama
+        IdMemberBox.SelectedValue =
         DateTimePicker1.Value = Format(Date.Now)
         stsPinjam.Text = ""
     End Sub
@@ -72,7 +50,6 @@
     End Sub
 
     Private Sub IdMemberBox_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles IdMemberBox.SelectionChangeCommitted
-        NamaAnggota.Text = getAnggota(IdMemberBox.SelectedValue).Nama
     End Sub
 
     Private Sub PinjamBuku_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -80,10 +57,8 @@
         IdBukuBox.ValueMember = "idBuku"
         IdBukuBox.DisplayMember = "idBuku"
         NamaBuku.Text = getBuku(IdBukuBox.SelectedValue).namaBuku
-        IdMemberBox.DataSource = members
         IdMemberBox.ValueMember = "idAnggota"
         IdMemberBox.DisplayMember = "idAnggota"
-        NamaAnggota.Text = getAnggota(IdMemberBox.SelectedValue).Nama
         DGView()
     End Sub
 
@@ -99,52 +74,9 @@
     End Sub
 
     Private Sub EditBtn_Click(sender As Object, e As EventArgs) Handles EditBtn.Click
-        Dim member As Anggota = getAnggota(setPinjam.idAnggota)
-        Dim buku1 As Buku = getBuku(setPinjam.idBuku)
-        Dim buku2 As Buku = getBuku(getPinjam(IdPinjamBox.Text).idBuku)
-        Dim pjm As Pinjam = setPinjam()
-        If getPinjam(IdPinjamBox.Text).statusPinjam Then
-            MessageBox.Show("Data pinjam yang sudah dikembalikan tidak bisa diedit", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        ElseIf buku1.idBuku <> getPinjam(IdPinjamBox.Text).idBuku Then
-            If buku1.jumlahBuku > 0 Then
-                MessageBox.Show("Buku Habis!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            ElseIf member.idAnggota = getPinjam(IdPinjamBox.Text).idAnggota Or member.statusPinjam = False Then
-                pjm.statusPinjam = If(stsPinjam.Text.Equals("Sudah Kembali"), True, False)
-                member.statusPinjam = True
-                buku2.jumlahBuku = buku2.jumlahBuku + 1
-                buku1.jumlahBuku = buku1.jumlahBuku - 1
-                Admin_Panel.UpdateBuku(buku2)
-                Admin_Panel.UpdateBuku(buku1)
-                Admin_Panel.UpdateAnggota(member)
-                Admin_Panel.UpdatePinjam(pjm)
-            End If
-        ElseIf member.statusPinjam Then
-            MessageBox.Show(member.Nama.ToString() & " Sudah Meminjam Buku!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        Else
-            pjm.statusPinjam = If(stsPinjam.Text.Equals("Sudah Kembali"), True, False)
-            Admin_Panel.UpdatePinjam(pjm)
-        End If
-
-        Reset()
-        SiticoneDataGridView1.Rows.Clear()
-        DGView()
     End Sub
 
     Private Sub SaveBtn_Click(sender As Object, e As EventArgs) Handles SaveBtn.Click
-        Dim member As Anggota = getAnggota(setPinjam.idAnggota)
-        Dim buku1 As Buku = getBuku(setPinjam.idBuku)
-        If member.statusPinjam Then
-            MessageBox.Show(member.Nama.ToString() & " Sudah Meminjam Buku!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        Else
-            Admin_Panel.AddPinjam(setPinjam)
-            buku1.jumlahBuku = buku1.jumlahBuku - 1
-            member.statusPinjam = True
-            Admin_Panel.UpdateAnggota(member)
-            Admin_Panel.UpdateBuku(buku1)
-        End If
-        Reset()
-        SiticoneDataGridView1.Rows.Clear()
-        DGView()
     End Sub
 
     Private Sub SiticoneButton4_Click(sender As Object, e As EventArgs) Handles SiticoneButton4.Click

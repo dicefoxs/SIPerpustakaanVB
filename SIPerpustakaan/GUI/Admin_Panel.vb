@@ -14,8 +14,9 @@
         Return _buku.getBuku
     End Function
 
-    Public Function getMembers() As List(Of Anggota)
-        Return _members.getAnggota
+
+    Public Function getMemberss() As DataSet
+        Return _members.getAnggotas
     End Function
 
     Public Function getKategori() As List(Of Kategori)
@@ -40,7 +41,7 @@
     End Sub
     'store anggota
     Public Sub AddAnggota(ByVal member As Anggota)
-        _members.addAnggota(member)
+        _members.addAnggotas(member)
     End Sub
     Public Sub UpdateAnggota(ByVal member As Anggota)
         _members.updateAnggota(member)
