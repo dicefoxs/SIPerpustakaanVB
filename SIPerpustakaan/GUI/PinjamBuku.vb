@@ -1,5 +1,4 @@
 ﻿Public Class PinjamBuku
-    Dim books As List(Of Buku) = Admin_Panel.getBuku
     Dim kats As List(Of Kategori) = Admin_Panel.getKategori
     Dim penerbits As List(Of Penerbit) = Admin_Panel.getPenerbit
     Dim pinjams As List(Of Pinjam) = Admin_Panel.getPinjam
@@ -22,13 +21,6 @@
     End Function
 
     Private Function getBuku(ByVal id As Integer) As Buku
-        Dim i As Integer = 0
-        For Each book As Buku In books
-            If books(i).idBuku = id Then
-                Return books(i)
-            End If
-            i += 1
-        Next
     End Function
 
     Public Sub DGView()
@@ -53,7 +45,6 @@
     End Sub
 
     Private Sub PinjamBuku_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        IdBukuBox.DataSource = books
         IdBukuBox.ValueMember = "idBuku"
         IdBukuBox.DisplayMember = "idBuku"
         NamaBuku.Text = getBuku(IdBukuBox.SelectedValue).namaBuku

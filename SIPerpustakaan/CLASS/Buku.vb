@@ -4,6 +4,7 @@
     Private Property _idKategori As Integer
     Private Property _jumlahBuku As Integer
     Private Property _idPenerbit As Integer
+    Private Property _idPenulis As Integer
 
     Public Property idBuku As Integer
         Set(value As Integer)
@@ -47,6 +48,15 @@
         End Set
         Get
             Return _jumlahBuku
+        End Get
+    End Property
+
+    Public Property idPenulis As Integer
+        Set(value As Integer)
+            _idPenulis = value
+        End Set
+        Get
+            Return _idPenulis
         End Get
     End Property
 End Class

@@ -10,10 +10,13 @@
         Return _penerbit.getPenerbits
     End Function
 
-    Public Function getBuku() As List(Of Buku)
-        Return _buku.getBuku
+    Public Function getBooks() As DataSet
+        Return _buku.getBooks
     End Function
 
+    Public Function getBook(ByRef id As Integer) As Buku
+        Return _buku.getBook(id)
+    End Function
 
     Public Function getMemberss() As DataSet
         Return _members.getAnggotas

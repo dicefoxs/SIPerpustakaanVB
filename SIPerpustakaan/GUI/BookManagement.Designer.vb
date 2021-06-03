@@ -31,6 +31,7 @@ Partial Class BookManagement
         Me.Label6 = New System.Windows.Forms.Label()
         Me.SiticonePictureBox1 = New ns1.SiticonePictureBox()
         Me.SiticoneCustomGradientPanel1 = New ns1.SiticoneCustomGradientPanel()
+        Me.SiticoneDataGridView1 = New ns1.SiticoneDataGridView()
         Me.JmlBuku = New System.Windows.Forms.NumericUpDown()
         Me.SiticoneButton1 = New ns1.SiticoneButton()
         Me.TmbhKat = New ns1.SiticoneButton()
@@ -48,17 +49,14 @@ Partial Class BookManagement
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.NamaBuku = New ns1.SiticoneMaterialTextBox()
-        Me.SiticoneDataGridView1 = New ns1.SiticoneDataGridView()
-        Me.nomor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nama = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.jumBuku = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.kategori = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SiticoneDragControl1 = New ns1.SiticoneDragControl(Me.components)
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.PenulisBx = New ns1.SiticoneComboBox()
         Me.SiticonePanel1.SuspendLayout()
         CType(Me.SiticonePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SiticoneCustomGradientPanel1.SuspendLayout()
-        CType(Me.JmlBuku, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SiticoneDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.JmlBuku, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SiticonePanel1
@@ -100,6 +98,9 @@ Partial Class BookManagement
         '
         'SiticoneCustomGradientPanel1
         '
+        Me.SiticoneCustomGradientPanel1.Controls.Add(Me.Label7)
+        Me.SiticoneCustomGradientPanel1.Controls.Add(Me.PenulisBx)
+        Me.SiticoneCustomGradientPanel1.Controls.Add(Me.SiticoneDataGridView1)
         Me.SiticoneCustomGradientPanel1.Controls.Add(Me.JmlBuku)
         Me.SiticoneCustomGradientPanel1.Controls.Add(Me.SiticoneButton1)
         Me.SiticoneCustomGradientPanel1.Controls.Add(Me.TmbhKat)
@@ -117,7 +118,6 @@ Partial Class BookManagement
         Me.SiticoneCustomGradientPanel1.Controls.Add(Me.Label2)
         Me.SiticoneCustomGradientPanel1.Controls.Add(Me.Label1)
         Me.SiticoneCustomGradientPanel1.Controls.Add(Me.NamaBuku)
-        Me.SiticoneCustomGradientPanel1.Controls.Add(Me.SiticoneDataGridView1)
         Me.SiticoneCustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SiticoneCustomGradientPanel1.Location = New System.Drawing.Point(0, 30)
         Me.SiticoneCustomGradientPanel1.Name = "SiticoneCustomGradientPanel1"
@@ -125,9 +125,72 @@ Partial Class BookManagement
         Me.SiticoneCustomGradientPanel1.Size = New System.Drawing.Size(1070, 615)
         Me.SiticoneCustomGradientPanel1.TabIndex = 4
         '
+        'SiticoneDataGridView1
+        '
+        Me.SiticoneDataGridView1.AllowUserToAddRows = False
+        Me.SiticoneDataGridView1.AllowUserToDeleteRows = False
+        Me.SiticoneDataGridView1.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.SiticoneDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.SiticoneDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.SiticoneDataGridView1.BackgroundColor = System.Drawing.Color.White
+        Me.SiticoneDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.SiticoneDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.SiticoneDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SiticoneDataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.SiticoneDataGridView1.ColumnHeadersHeight = 21
+        Me.SiticoneDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.SiticoneDataGridView1.DefaultCellStyle = DataGridViewCellStyle3
+        Me.SiticoneDataGridView1.EnableHeadersVisualStyles = False
+        Me.SiticoneDataGridView1.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.SiticoneDataGridView1.Location = New System.Drawing.Point(12, 323)
+        Me.SiticoneDataGridView1.Name = "SiticoneDataGridView1"
+        Me.SiticoneDataGridView1.ReadOnly = True
+        Me.SiticoneDataGridView1.RowHeadersVisible = False
+        Me.SiticoneDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.SiticoneDataGridView1.Size = New System.Drawing.Size(1046, 280)
+        Me.SiticoneDataGridView1.TabIndex = 20
+        Me.SiticoneDataGridView1.Theme = ns5.DataGridViewPresetThemes.[Default]
+        Me.SiticoneDataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.SiticoneDataGridView1.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        Me.SiticoneDataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
+        Me.SiticoneDataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
+        Me.SiticoneDataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
+        Me.SiticoneDataGridView1.ThemeStyle.BackColor = System.Drawing.Color.White
+        Me.SiticoneDataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.SiticoneDataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.SiticoneDataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.SiticoneDataGridView1.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        Me.SiticoneDataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.SiticoneDataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.SiticoneDataGridView1.ThemeStyle.HeaderStyle.Height = 21
+        Me.SiticoneDataGridView1.ThemeStyle.ReadOnly = True
+        Me.SiticoneDataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.SiticoneDataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.SiticoneDataGridView1.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        Me.SiticoneDataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.SiticoneDataGridView1.ThemeStyle.RowsStyle.Height = 22
+        Me.SiticoneDataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.SiticoneDataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        '
         'JmlBuku
         '
         Me.JmlBuku.Location = New System.Drawing.Point(193, 166)
+        Me.JmlBuku.Maximum = New Decimal(New Integer() {32767, 0, 0, 0})
         Me.JmlBuku.Name = "JmlBuku"
         Me.JmlBuku.Size = New System.Drawing.Size(150, 20)
         Me.JmlBuku.TabIndex = 19
@@ -276,7 +339,7 @@ Partial Class BookManagement
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(209, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(604, 128)
+        Me.Label4.Location = New System.Drawing.Point(556, 128)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(72, 19)
         Me.Label4.TabIndex = 9
@@ -293,7 +356,7 @@ Partial Class BookManagement
         Me.KatPenerbit.HoveredState.Parent = Me.KatPenerbit
         Me.KatPenerbit.ItemHeight = 30
         Me.KatPenerbit.ItemsAppearance.Parent = Me.KatPenerbit
-        Me.KatPenerbit.Location = New System.Drawing.Point(608, 150)
+        Me.KatPenerbit.Location = New System.Drawing.Point(560, 150)
         Me.KatPenerbit.Name = "KatPenerbit"
         Me.KatPenerbit.ShadowDecoration.Parent = Me.KatPenerbit
         Me.KatPenerbit.Size = New System.Drawing.Size(165, 36)
@@ -376,87 +439,38 @@ Partial Class BookManagement
         Me.NamaBuku.Size = New System.Drawing.Size(150, 36)
         Me.NamaBuku.TabIndex = 1
         '
-        'SiticoneDataGridView1
-        '
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.SiticoneDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.SiticoneDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.SiticoneDataGridView1.BackgroundColor = System.Drawing.Color.White
-        Me.SiticoneDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.SiticoneDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.SiticoneDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.SiticoneDataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.SiticoneDataGridView1.ColumnHeadersHeight = 21
-        Me.SiticoneDataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nomor, Me.nama, Me.jumBuku, Me.kategori})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.SiticoneDataGridView1.DefaultCellStyle = DataGridViewCellStyle3
-        Me.SiticoneDataGridView1.EnableHeadersVisualStyles = False
-        Me.SiticoneDataGridView1.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.SiticoneDataGridView1.Location = New System.Drawing.Point(12, 282)
-        Me.SiticoneDataGridView1.Name = "SiticoneDataGridView1"
-        Me.SiticoneDataGridView1.RowHeadersVisible = False
-        Me.SiticoneDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.SiticoneDataGridView1.Size = New System.Drawing.Size(1046, 321)
-        Me.SiticoneDataGridView1.TabIndex = 0
-        Me.SiticoneDataGridView1.Theme = ns5.DataGridViewPresetThemes.[Default]
-        Me.SiticoneDataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
-        Me.SiticoneDataGridView1.ThemeStyle.AlternatingRowsStyle.Font = Nothing
-        Me.SiticoneDataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
-        Me.SiticoneDataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
-        Me.SiticoneDataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
-        Me.SiticoneDataGridView1.ThemeStyle.BackColor = System.Drawing.Color.White
-        Me.SiticoneDataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.SiticoneDataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.SiticoneDataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.SiticoneDataGridView1.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        Me.SiticoneDataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.SiticoneDataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.SiticoneDataGridView1.ThemeStyle.HeaderStyle.Height = 21
-        Me.SiticoneDataGridView1.ThemeStyle.ReadOnly = False
-        Me.SiticoneDataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
-        Me.SiticoneDataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.SiticoneDataGridView1.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        Me.SiticoneDataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.SiticoneDataGridView1.ThemeStyle.RowsStyle.Height = 22
-        Me.SiticoneDataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.SiticoneDataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'nomor
-        '
-        Me.nomor.HeaderText = "No."
-        Me.nomor.Name = "nomor"
-        '
-        'nama
-        '
-        Me.nama.HeaderText = "Nama"
-        Me.nama.Name = "nama"
-        '
-        'jumBuku
-        '
-        Me.jumBuku.HeaderText = "Jumlah Buku"
-        Me.jumBuku.Name = "jumBuku"
-        '
-        'kategori
-        '
-        Me.kategori.HeaderText = "KategoriBuku"
-        Me.kategori.Name = "kategori"
-        '
         'SiticoneDragControl1
         '
         Me.SiticoneDragControl1.TargetControl = Me.SiticonePanel1
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(209, Byte), Integer))
+        Me.Label7.Location = New System.Drawing.Point(727, 128)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(62, 19)
+        Me.Label7.TabIndex = 22
+        Me.Label7.Text = "Penulis"
+        '
+        'PenulisBx
+        '
+        Me.PenulisBx.BackColor = System.Drawing.Color.Transparent
+        Me.PenulisBx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.PenulisBx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.PenulisBx.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.PenulisBx.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.PenulisBx.FormattingEnabled = True
+        Me.PenulisBx.HoveredState.Parent = Me.PenulisBx
+        Me.PenulisBx.ItemHeight = 30
+        Me.PenulisBx.ItemsAppearance.Parent = Me.PenulisBx
+        Me.PenulisBx.Location = New System.Drawing.Point(731, 150)
+        Me.PenulisBx.Name = "PenulisBx"
+        Me.PenulisBx.ShadowDecoration.Parent = Me.PenulisBx
+        Me.PenulisBx.Size = New System.Drawing.Size(165, 36)
+        Me.PenulisBx.TabIndex = 21
         '
         'BookManagement
         '
@@ -475,8 +489,8 @@ Partial Class BookManagement
         CType(Me.SiticonePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SiticoneCustomGradientPanel1.ResumeLayout(False)
         Me.SiticoneCustomGradientPanel1.PerformLayout()
-        CType(Me.JmlBuku, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SiticoneDataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.JmlBuku, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -484,7 +498,6 @@ Partial Class BookManagement
     Friend WithEvents SiticonePictureBox1 As ns1.SiticonePictureBox
     Friend WithEvents SiticonePanel1 As ns1.SiticonePanel
     Friend WithEvents SiticoneCustomGradientPanel1 As ns1.SiticoneCustomGradientPanel
-    Friend WithEvents SiticoneDataGridView1 As ns1.SiticoneDataGridView
     Friend WithEvents SiticoneDragControl1 As ns1.SiticoneDragControl
     Friend WithEvents NamaBuku As ns1.SiticoneMaterialTextBox
     Friend WithEvents Label1 As Label
@@ -497,10 +510,6 @@ Partial Class BookManagement
     Friend WithEvents SiticoneButton4 As ns1.SiticoneButton
     Friend WithEvents DeleteBtn As ns1.SiticoneButton
     Friend WithEvents EditBtn As ns1.SiticoneButton
-    Friend WithEvents nomor As DataGridViewTextBoxColumn
-    Friend WithEvents nama As DataGridViewTextBoxColumn
-    Friend WithEvents jumBuku As DataGridViewTextBoxColumn
-    Friend WithEvents kategori As DataGridViewTextBoxColumn
     Friend WithEvents Label6 As Label
     Friend WithEvents IdBox As ns1.SiticoneMaterialTextBox
     Friend WithEvents addbook As ns1.SiticoneButton
@@ -508,4 +517,7 @@ Partial Class BookManagement
     Friend WithEvents SiticoneButton1 As ns1.SiticoneButton
     Friend WithEvents TmbhKat As ns1.SiticoneButton
     Friend WithEvents JmlBuku As NumericUpDown
+    Friend WithEvents SiticoneDataGridView1 As ns1.SiticoneDataGridView
+    Friend WithEvents Label7 As Label
+    Friend WithEvents PenulisBx As ns1.SiticoneComboBox
 End Class

@@ -22,7 +22,7 @@ Public Class AnggotaController
         Try
             conn.Open()
             cmd = New MySqlCommand("INSERT INTO member(nama_member, alamat_member, telp_member, nik, jenis_kelamin ,tanggal_lahir ,status, status_pinjam) VALUES('" & anggota.Nama & "','" & anggota.Alamat & "','" & anggota.NoTelp & "','" & anggota.NIK & "','" & anggota.JenisKel & "','" & anggota.tglLahir.ToString("yyyy-MM-dd ") & "'," & anggota.StatusAnggota & ", 0)", conn)
-            rd = cmd.ExecuteReader
+            cmd.ExecuteReader()
             MsgBox("Berhasil Memasukan Data", MsgBoxStyle.DefaultButton2)
             conn.Close()
         Catch ex As Exception
